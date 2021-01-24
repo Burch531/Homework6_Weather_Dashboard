@@ -16,3 +16,14 @@ $(document).ready(function () {
   for (var i = 0; i < history.length; i++) {
       createRow(history[i]);
   }
+
+  
+  function createRow(text) {
+    var listCity = $("<li>").addClass("list-group-item").text(text);
+    $(".history").append(listCity);
+}
+//listener for list item on click functionality.
+$(".history").on("click", "li", function () {
+    weatherFunction($(this).text());
+    weatherForecast($(this).text());
+});
