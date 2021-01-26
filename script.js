@@ -54,6 +54,13 @@ var apiKey = "f7cd1c5ba42d617eae2916f00f40439d"
           }
           $("#current").empty();
 
+          var cardForecast = $("<div>").addClass("card");
+          var cardBodyForecast = $("<div>").addClass("card-body");
+          var title = $("<h3>").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")");
+          var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
+          var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
+          var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
+          var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
 
 
@@ -61,7 +68,6 @@ var apiKey = "f7cd1c5ba42d617eae2916f00f40439d"
 
 
 
-          
           if (uvResponse < 3) {
             btn.addClass("btn-success");
         } else if (uvResponse > 6) {
@@ -69,3 +75,12 @@ var apiKey = "f7cd1c5ba42d617eae2916f00f40439d"
         } else {
             btn.addClass("btn-warning");
         }
+
+
+        var columnFive = $("<div>").addClass("col-md-2");
+        var card = $("<div>").addClass("card bg-info text-white");
+        var cardBody = $("<div>").addClass("card-body p-2")
+        var dateCard = $("<h5>").addClass("card-title").text(new Date(results[i].dt_txt).toLocaleDateString());
+        var temperature = $("<p>").addClass("card-text forecastTemp").text("Temperature: " + results[i].main.temp + " °F");
+        var humidity = $("<p>").addClass("card-text forecastHumidity").text("Humidity: " + results[i].main.humidity + "%");
+        var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + results[i].weather[0].icon + ".png")
