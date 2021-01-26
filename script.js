@@ -54,4 +54,18 @@ var apiKey = "f7cd1c5ba42d617eae2916f00f40439d"
           }
           $("#current").empty();
 
-         
+
+
+
+
+
+
+
+          
+          if (uvResponse < 3) {
+            btn.addClass("btn-success");
+        } else if (uvResponse > 6) {
+            btn.addClass("btn-danger");
+        } else {
+            btn.addClass("btn-warning");
+        }
