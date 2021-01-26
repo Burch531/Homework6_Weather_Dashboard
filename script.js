@@ -62,6 +62,8 @@ var apiKey = "f7cd1c5ba42d617eae2916f00f40439d"
           var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
           var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
+          var lon = data.coord.lon;
+          var lat = data.coord.lat;
 
 
 

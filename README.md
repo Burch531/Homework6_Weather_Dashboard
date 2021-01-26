@@ -8,6 +8,6 @@ Link for GitHub - https://github.com/Burch531/Homework6_Weather_Dashboard
 
 Link to deployed site - https://burch531.github.io/Homework6_Weather_Dashboard/.
 
-## Screenshots
+## Screenshot
 
 ![Weather_Dashboard](./images/)
