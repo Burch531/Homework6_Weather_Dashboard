@@ -68,7 +68,7 @@ $(document).ready(function () {
       var title = $("<h3>").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")");
       var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
-      var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
+      var temp = $("<p>").addClass("card-text").text("Temperature: " + tempF + " °F");
       var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
       var lon = data.coord.lon;
