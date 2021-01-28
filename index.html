@@ -15,29 +15,29 @@
 
 <body>
   <header>
-      <h1>Weather Dashboard</h1>
+    <h1>Weather Dashboard</h1>
   </header>
-     <!-- row where user can enter city to be serached -->
-     <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-3 bg-light">
-              <h5>Search for a City:</h5>
-              <div class="form-inline form-group">
-                  <input class="form-control" type="text" id="search">
-                  <button class="btn btn-primary" id="searchButton"> <i class="fa fa-search"></i> </button>
-              </div>
-              <button class=" btn btn-primary" type="button" id="clear">Clear history</button>
-              <!-- ​once a city is searched will append here -->
-              <ul class="list-group history"></ul>
-            </div>
-
-          <!-- ​where the api data will appear for the current forcast -->
-          <section class="col-md-9">
-              <div id="current"></div>
-          <!-- ​where the api data will appear for the 5 day forcast -->
-              <div id="fiveDay" class="card-deck"></div>
-          </section>    
+  <!-- row where user can enter city to be serached -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 bg-light">
+        <h5>Search for a City:</h5>
+        <div class="form-inline form-group">
+          <input class="form-control" type="text" id="search">
+          <button class="btn btn-primary" id="searchButton"> <i class="fa fa-search"></i> </button>
+        </div>
+        <button class=" btn btn-primary" type="button" id="clear">Clear history</button>
+        <!-- ​once a city is searched will append here -->
+        <ul class="list-group history"></ul>
       </div>
+
+      <!-- ​where the api data will appear for the current forcast -->
+      <section class="col-md-9">
+        <div id="current"></div>
+        <!-- ​where the api data will appear for the 5 day forcast -->
+        <div id="fiveDay" class="card-deck"></div>
+      </section>
+    </div>
   </div>
 
 
