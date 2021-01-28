@@ -51,7 +51,7 @@ $(document).ready(function () {
     //API to get current weather//
     $.ajax({
       type: "GET",
-      url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + apiKey,
+      url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + apiKey + "&units=imperial",
 
     }).then(function (data) {
       if (saveCity.indexOf(searchCity) === -1) {
@@ -61,14 +61,13 @@ $(document).ready(function () {
       }
       $("#current").empty();
 
-      var tempF = (data.main.temp - 273.15) * 1.80 + 32;
-
+      
       var cardForecast = $("<div>").addClass("card");
       var cardBodyForecast = $("<div>").addClass("card-body");
       var title = $("<h3>").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")");
       var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
-      var temp = $("<p>").addClass("card-text").text("Temperature: " + tempF + " °F");
+      var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
       var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
       var lon = data.coord.lon;
@@ -113,7 +112,7 @@ $(document).ready(function () {
   function fiveDayForecast(searchCity) {
     $.ajax({
       type: "GET",
-      url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + apiKey,
+      url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + apiKey + "&units=imperial",
     }).then(function (data) {
       console.log(data);
       var results = data.list

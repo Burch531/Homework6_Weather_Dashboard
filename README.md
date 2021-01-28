@@ -10,4 +10,5 @@ Link to deployed site - https://burch531.github.io/Homework6_Weather_Dashboard/.
 
 ## Screenshot
 
-![Weather_Dashboard](./images/)
+![Weather_Dashboard](./images/Weather_Dashboard.PNG)
+
