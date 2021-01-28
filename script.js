@@ -78,7 +78,7 @@ $(document).ready(function () {
         url: "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat + "&lon=" + lon,
 
       }).then(function (response) {
-        console.log(response);
+        
 
         var uvColor;
         var uvResponse = response.value;
@@ -104,7 +104,7 @@ $(document).ready(function () {
       cardBodyForecast.append(title, temp, humid, wind);
       cardForecast.append(cardBodyForecast);
       $("#current").append(cardForecast);
-      console.log(data);
+      
     });
   }
 
@@ -114,10 +114,10 @@ $(document).ready(function () {
       type: "GET",
       url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + apiKey + "&units=imperial",
     }).then(function (data) {
-      console.log(data);
+     
       var results = data.list
 
-      $("#fiveDay").html("<h4>5-Day Forecast:</h4> </br>").append("<div class=\"row\">");
+      $("#fiveDay").html("<h4>5-Day Forecast:   </h4></br>").append("<div class=\"row\">");
 
       for (var i = 0; i < results.length; i++) {
 
