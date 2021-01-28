@@ -64,10 +64,16 @@ var apiKey = "f7cd1c5ba42d617eae2916f00f40439d"
 
           var lon = data.coord.lon;
           var lat = data.coord.lat;
+           //API to get UV//
+           $.ajax({
+            type: "GET",
+            url: "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat + "&lon=" + lon,
 
+           }).then(function (response) {
+            console.log(response);
 
-
-
+           var uvColor;
+           var uvResponse = response.value;
 
 
           if (uvResponse < 3) {
@@ -77,7 +83,11 @@ var apiKey = "f7cd1c5ba42d617eae2916f00f40439d"
         } else {
             btn.addClass("btn-warning");
         }
-
+        //API for 5 day forecast
+        $.ajax({
+          type: "GET",
+          url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + apiKey,
+        })
 
         var columnFive = $("<div>").addClass("col-md-2");
         var card = $("<div>").addClass("card bg-info text-white");
